@@ -10,12 +10,19 @@ class FrenchToEnglishTranslatorTest(unittest.TestCase):
         self.assertIsNone(output)
 
     
-    def test_translates_properly(self):
+    def test_translates_to_english(self):
         french = "Bonjour"
         
         english = french_to_english(french)
 
         self.assertEqual(english, "Hello")
+
+    def test_changes_translated_text(self):
+        french = "Bonjour"
+        
+        english = french_to_english(french)
+
+        self.assertNotEqual(english, "Bonjour")
 
 
 class EnglishToFrenchTranslatorTest(unittest.TestCase):
@@ -32,6 +39,13 @@ class EnglishToFrenchTranslatorTest(unittest.TestCase):
         french = english_to_french(english)
 
         self.assertEqual(french, "Bonjour")
+    
+    def test_changes_translated_text(self):
+        english = "Hello"
+        
+        french = english_to_french(english)
+
+        self.assertNotEqual(french, "Hello")
 
 if __name__ == '__main__':
     unittest.main()
