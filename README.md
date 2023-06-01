@@ -1,1 +1,1 @@
-# coding-project-template
+# Flask French to English Translator
